@@ -29,8 +29,24 @@ def provide_handle_transaction(amount_threshold):
                         'to': event["args"]["to"],
                         'amount': stEth_amount
                 }
-            }))
-                
+                }))
+            if(event['args']['to']=='0x0000000000000000000000000000000000000000'): #Burn stEth tokens
+            
+                value=event['args']['value']
+                stEth_amount=value/10**18
+                if (stEth_amount > amount_threshold):
+                    findings.append(Finding({
+                        'protocol': 'Lido',
+                        'name': 'Large stETh Burn',
+                        'description': f'{stEth_amount} stEth Burned',
+                        'alert_id': 'FORTA-7',
+                        'type': FindingType.Info,
+                        'severity': FindingSeverity.Info,
+                        'metadata': {
+                        'from': event["args"]["from"],
+                        'amount': stEth_amount
+                }
+                }))   
         return findings
 
     return handle_transaction
