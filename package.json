@@ -11,7 +11,7 @@
     1
   ],
   "scripts": {
-    "postinstall": "python3 -m pip install -r requirements_dev.txt --break-system-packages",
+    "postinstall": "python3 -m pip install -r requirements_dev.txt",
     "start": "npm run start:dev",
     "start:dev": "nodemon --watch src --watch forta.config.json -e py --exec \"forta-agent run\"",
     "start:prod": "forta-agent run --prod",
