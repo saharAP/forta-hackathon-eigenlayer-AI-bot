@@ -4,7 +4,7 @@ stETH_ADDRESS = '0xae7ab96520de3a18e5e111b5eaab095312d7fe84'
 
 stETH_DECIMALS = 18
 
-AMOUNT_THRESHOLD = 0.1
+AMOUNT_THRESHOLD = 10
 
 
 def provide_handle_transaction(amount_threshold):
