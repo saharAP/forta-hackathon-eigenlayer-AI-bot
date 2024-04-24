@@ -2,25 +2,35 @@
 
 ## Description
 
-This agent detects transactions with large Tether transfers
+This agent detects large mint and burns of stETH for the lido project
 
 ## Supported Chains
 
 - Ethereum
-- List any other chains this agent can support e.g. BSC
 
 ## Alerts
-
-Describe each of the type of alerts fired by this agent
-
-- FORTA-1
-  - Fired when a transaction contains a Tether transfer over 10,000 USDT
-  - Severity is always set to "low" (mention any conditions where it could be something else)
-  - Type is always set to "info" (mention any conditions where it could be something else)
-  - Mention any other type of metadata fields included with this alert
-
+Following is an example alert for the bot:
+```
+1 findings for transaction 0x518c1fe65e0bf7fb2365e9080ef505b0561409e409ed15dcff4f0352cd36bb4d {
+  "name": "Large stETh Mint",
+  "description": "26.903787861071276 stEth minted",
+  "alertId": "FORTA-7",
+  "protocol": "Lido",
+  "severity": "Info",
+  "type": "Info",
+  "metadata": {
+    "to": "0x13020547534Fb51ffF373Ae0Ac9F85C36408A81B",
+    "amount": 26.903787861071276
+  },
+  "addresses": [],
+  "labels": [],
+  "uniqueKey": "",
+  "source": {},
+  "timestamp": "2024-04-23 17:08:44.923450"
+}
+```
 ## Test Data
 
 The agent behaviour can be verified with the following transactions:
 
-- 0x3a0f757030beec55c22cbc545dd8a844cbbb2e6019461769e1bc3f3a95d10826 (15,000 USDT)
+- 0x518c1fe65e0bf7fb2365e9080ef505b0561409e409ed15dcff4f0352cd36bb4d (Mint 26 stETH)
