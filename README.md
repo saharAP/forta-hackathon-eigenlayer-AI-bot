@@ -1,4 +1,4 @@
-# Large Tether Transfer Agent
+# Large stETH Mint and Burn Agent
 
 ## Description
 
